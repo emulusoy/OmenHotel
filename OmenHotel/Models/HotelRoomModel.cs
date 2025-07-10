@@ -19,6 +19,10 @@
             public int hotel_id { get; set; }
             public string accessibilityLabel { get; set; }
             public Property1 property { get; set; }
+
+            public Benefitbadge[] benefitBadges { get; set; }
+
+            public Grossprice grossPrice { get; set; }
         }
 
         public class Property1

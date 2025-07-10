@@ -1,3 +1,9 @@
+﻿@using OmenHotel.Models
+@model HotelRoomModel.Hotel
+
+@{
+    Layout = null; // Veya layout kullanıyorsanız ilgili path'i belirtin.
+}
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -7,32 +13,28 @@
     <meta name="keywords" content="Sona, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sona | Template</title>
+    <title>Room Detail</title>
 
-    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700&display=swap" rel="stylesheet">
 
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/flaticon.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="/omen/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/omen/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/omen/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/omen/css/flaticon.css" type="text/css">
+    <link rel="stylesheet" href="/omen/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/omen/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/omen/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="/omen/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="/omen/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/omen/css/style.css" type="text/css">
 </head>
 
 <body>
-    <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
     </div>
 
-    <!-- Offcanvas Menu Section Begin -->
     <div class="offcanvas-menu-overlay"></div>
     <div class="canvas-open">
         <i class="icon_menu"></i>
@@ -46,7 +48,7 @@
         </div>
         <div class="header-configure-area">
             <div class="language-option">
-                <img src="img/flag.jpg" alt="">
+                <img src="/omen/img/flag.jpg" alt="">
                 <span>EN <i class="fa fa-angle-down"></i></span>
                 <div class="flag-dropdown">
                     <ul>
@@ -59,19 +61,8 @@
         </div>
         <nav class="mainmenu mobile-menu">
             <ul>
-                <li class="active"><a href="./index.html">Home</a></li>
-                <li><a href="./rooms.html">Rooms</a></li>
-                <li><a href="./about-us.html">About Us</a></li>
-                <li><a href="./pages.html">Pages</a>
-                    <ul class="dropdown">
-                        <li><a href="./room-details.html">Room Details</a></li>
-                        <li><a href="./blog-details.html">Blog Details</a></li>
-                        <li><a href="#">Family Room</a></li>
-                        <li><a href="#">Premium Room</a></li>
-                    </ul>
-                </li>
-                <li><a href="./blog.html">News</a></li>
-                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="/Default/Index/">Home</a></li>
+                <li class="active"><a href="/Room/RoomIndex/">Rooms</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -82,21 +73,19 @@
             <a href="#"><i class="fa fa-instagram"></i></a>
         </div>
         <ul class="top-widget">
-            <li><i class="fa fa-phone"></i> (12) 345 67890</li>
-            <li><i class="fa fa-envelope"></i> info.colorlib@gmail.com</li>
+            <li><i class="fa fa-phone"></i> (90) 536 300 3535</li>
+            <li><i class="fa fa-envelope"></i> info.sona@gmail.com</li>
         </ul>
     </div>
-    <!-- Offcanvas Menu Section End -->
 
-    <!-- Header Section Begin -->
-    <header class="header-section header-normal">
+    <header class="header-section">
         <div class="top-nav">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
                         <ul class="tn-left">
-                            <li><i class="fa fa-phone"></i> (12) 345 67890</li>
-                            <li><i class="fa fa-envelope"></i> info.colorlib@gmail.com</li>
+                            <li><i class="fa fa-phone"></i> (90) 536 300 3535</li>
+                            <li><i class="fa fa-envelope"></i> info.sona@gmail.com</li>
                         </ul>
                     </div>
                     <div class="col-lg-6">
@@ -109,7 +98,7 @@
                             </div>
                             <a href="#" class="bk-btn">Booking Now</a>
                             <div class="language-option">
-                                <img src="img/flag.jpg" alt="">
+                                <img src="/omen/img/flag.jpg" alt="">
                                 <span>EN <i class="fa fa-angle-down"></i></span>
                                 <div class="flag-dropdown">
                                     <ul>
@@ -129,7 +118,7 @@
                     <div class="col-lg-2">
                         <div class="logo">
                             <a href="./index.html">
-                                <img src="img/logo.png" alt="">
+                                <img src="/omen/img/logo.png" alt="">
                             </a>
                         </div>
                     </div>
@@ -137,19 +126,8 @@
                         <div class="nav-menu">
                             <nav class="mainmenu">
                                 <ul>
-                                    <li><a href="./index.html">Home</a></li>
-                                    <li class="active"><a href="./rooms.html">Rooms</a></li>
-                                    <li><a href="./about-us.html">About Us</a></li>
-                                    <li><a href="./pages.html">Pages</a>
-                                        <ul class="dropdown">
-                                            <li><a href="./room-details.html">Room Details</a></li>
-                                            <li><a href="./blog-details.html">Blog Details</a></li>
-                                            <li><a href="#">Family Room</a></li>
-                                            <li><a href="#">Premium Room</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="./blog.html">News</a></li>
-                                    <li><a href="./contact.html">Contact</a></li>
+                                    <li><a href="/Default/Index">Home</a></li>
+                                    <li class="active"><a href="/Room/RoomIndex/">Rooms</a></li>
                                 </ul>
                             </nav>
                             <div class="nav-right search-switch">
@@ -161,9 +139,7 @@
             </div>
         </div>
     </header>
-    <!-- Header End -->
 
-    <!-- Breadcrumb Section Begin -->
     <div class="breadcrumb-section">
         <div class="container">
             <div class="row">
@@ -171,7 +147,7 @@
                     <div class="breadcrumb-text">
                         <h2>Our Rooms</h2>
                         <div class="bt-option">
-                            <a href="./home.html">Home</a>
+                            <a href="/Default/Index">Home</a>
                             <span>Rooms</span>
                         </div>
                     </div>
@@ -179,70 +155,76 @@
             </div>
         </div>
     </div>
-    <!-- Breadcrumb Section End -->
-
-    <!-- Room Details Section Begin -->
+    <br />
+    <h2></h2>
     <section class="room-details-section spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-8">
                     <div class="room-details-item">
-                        <img src="img/room/room-details.jpg" alt="">
+                        @{
+                            string imageUrl = "/omen/img/room/room-details.jpg";
+                            if (Model != null && Model.property != null && Model.property.photoUrls != null && Model.property.photoUrls.Length > 0)
+                            {
+                                imageUrl = Model.property.photoUrls[0];
+                            }
+                        }
+                        <img src="@imageUrl" alt="@(Model?.property?.name ?? "Hotel Room")">
                         <div class="rd-text">
                             <div class="rd-title">
-                                <h3></h3>
+                                <h3>@(Model?.property?.name ?? "N/A")</h3> 
                                 <div class="rdt-right">
                                     <div class="rating">
-                                        <i class="icon_star"></i>
-                                        <i class="icon_star"></i>
-                                        <i class="icon_star"></i>
-                                        <i class="icon_star"></i>
-                                        <i class="icon_star-half_alt"></i>
+                                        <span>(@(Model?.property?.reviewCount ?? 0) Reviews)</span> 
                                     </div>
-                                    <a href="#">Booking Now</a>
+                                    <a href="#">Book Now</a>
                                 </div>
                             </div>
-                            <h2>159$<span>/Pernight</span></h2>
+                            <h2>@($"{Math.Round(Model.property.priceBreakdown.grossPrice.value):N0} {Model.property.priceBreakdown.grossPrice.currency}") Per Night</h2>
+
                             <table>
                                 <tbody>
                                     <tr>
-                                        <td class="r-o">Size:</td>
-                                        <td>30 ft</td>
+                                        <td class="r-o">Rating:</td>
+                                        <td>@(Model?.property?.reviewScore.ToString("F1") ?? "N/A") (@(Model?.property?.reviewScoreWord ?? "No reviews yet"))</td>
+                                    </tr>
+                                    @if (Model != null && Model.benefitBadges != null)
+                                    {
+                                        foreach (var badge in Model.benefitBadges)
+                                        {
+                                            <tr>
+                                                <td class="r-o">@badge.variant:</td>
+                                                <td>@badge.text</td>
+                                            </tr>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <tr>
+                                            <td class="r-o">Details:</td>
+                                            <td>No specific benefit badges available.</td>
+                                        </tr>
+                                    }
+                                    <tr>
+                                        <td class="r-o">Check-in:</td>
+                                        <td>@(Model?.property?.checkin?.fromTime ?? "N/A") - @(Model?.property?.checkin?.untilTime ?? "N/A")</td>
                                     </tr>
                                     <tr>
-                                        <td class="r-o">Capacity:</td>
-                                        <td>Max persion 5</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="r-o">Bed:</td>
-                                        <td>King Beds</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="r-o">Services:</td>
-                                        <td>Wifi, Television, Bathroom,...</td>
+                                        <td class="r-o">Check-out:</td>
+                                        <td>@(Model?.property?.checkout?.fromTime ?? "N/A") - @(Model?.property?.checkout?.untilTime ?? "N/A")</td> 
                                     </tr>
                                 </tbody>
                             </table>
-                            <p class="f-para">Motorhome or Trailer that is the question for you. Here are some of the
-                                advantages and disadvantages of both, so you will be confident when purchasing an RV.
-                                When comparing Rvs, a motorhome or a travel trailer, should you buy a motorhome or fifth
-                                wheeler? The advantages and disadvantages of both are studied so that you can make your
-                                choice wisely when purchasing an RV. Possessing a motorhome or fifth wheel is an
-                                achievement of a lifetime. It can be similar to sojourning with your residence as you
-                                search the various sites of our great land, America.</p>
-                            <p>The two commonly known recreational vehicle classes are the motorized and towable.
-                                Towable rvs are the travel trailers and the fifth wheel. The rv travel trailer or fifth
-                                wheel has the attraction of getting towed by a pickup or a car, thus giving the
-                                adaptability of possessing transportation for you when you are parked at your campsite.
+                            <p class="f-para">
+                                @(Model?.accessibilityLabel ?? "No detailed description available.")
                             </p>
                         </div>
                     </div>
+
+                </div>
             </div>
         </div>
     </section>
-    <!-- Room Details Section End -->
-
-    <!-- Footer Section Begin -->
     <footer class="footer-section">
         <div class="container">
             <div class="footer-text">
@@ -251,7 +233,7 @@
                         <div class="ft-about">
                             <div class="logo">
                                 <a href="#">
-                                    <img src="img/footer-logo.png" alt="">
+                                    <img src="/omen/img/footer-logo.png" alt="">
                                 </a>
                             </div>
                             <p>We inspire and reach millions of travelers<br /> across 90 local websites</p>
@@ -299,17 +281,16 @@
                         </ul>
                     </div>
                     <div class="col-lg-5">
-                        <div class="co-text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
+                        <div class="co-text">
+                            <p>
+                                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
-    <!-- Footer Section End -->
-
-    <!-- Search model Begin -->
     <div class="search-model">
         <div class="h-100 d-flex align-items-center justify-content-center">
             <div class="search-close-switch"><i class="icon_close"></i></div>
@@ -318,17 +299,14 @@
             </form>
         </div>
     </div>
-    <!-- Search model end -->
-
-    <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="/omen/js/jquery-3.3.1.min.js"></script>
+    <script src="/omen/js/bootstrap.min.js"></script>
+    <script src="/omen/js/jquery.magnific-popup.min.js"></script>
+    <script src="/omen/js/jquery.nice-select.min.js"></script>
+    <script src="/omen/js/jquery-ui.min.js"></script>
+    <script src="/omen/js/jquery.slicknav.js"></script>
+    <script src="/omen/js/owl.carousel.min.js"></script>
+    <script src="/omen/js/main.js"></script>
 </body>
 
 </html>

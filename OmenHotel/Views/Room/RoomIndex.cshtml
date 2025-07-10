@@ -1,5 +1,5 @@
-﻿@using OmenHotel.Models // Modelinizin namespace'ini buraya ekleyin
-@model IEnumerable<HotelRoomModel.Hotel> // Artık model olarak HotelRoomModel.Hotel listesini bekliyoruz
+﻿@using OmenHotel.Models 
+@model IEnumerable<HotelRoomModel.Hotel>
 
 @{
     Layout = null; // Veya layout kullanıyorsanız ilgili path'i belirtin.
@@ -61,8 +61,8 @@
         </div>
         <nav class="mainmenu mobile-menu">
             <ul>
-                <li class="active"><a href="/Default/Index/">Home</a></li>
-                <li><a href="/Room/Index/">Rooms</a></li>
+                <li><a href="/Default/Index/">Home</a></li>
+                <li class ="active"><a href="/Room/RoomIndex/">Rooms</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -126,8 +126,8 @@
                         <div class="nav-menu">
                             <nav class="mainmenu">
                                 <ul>
-                                    <li class="active"><a href="./index.html">Home</a></li>
-                                    <li><a href="./rooms.html">Rooms</a></li>
+                                    <li><a href="/Default/Index">Home</a></li>
+                                    <li class="active"><a href="/Room/RoomIndex/">Rooms</a></li>
                                 </ul>
                             </nav>
                             <div class="nav-right search-switch">
@@ -146,7 +146,7 @@
                     <div class="breadcrumb-text">
                         <h2>Our Rooms</h2>
                         <div class="bt-option">
-                            <a href="./home.html">Home</a>
+                            <a href="/Default/Index">Home</a>
                             <span>Rooms</span>
                         </div>
                     </div>
@@ -177,9 +177,11 @@
                                     <h3>
                                         @if (hotel.property.priceBreakdown != null && hotel.property.priceBreakdown.grossPrice != null)
                                         {
-                                            @(Math.Round(hotel.property.priceBreakdown.grossPrice.value)) @hotel.property.priceBreakdown.grossPrice.currency
+                                            var price = hotel.property.priceBreakdown.grossPrice.value;
+                                            var currency = hotel.property.priceBreakdown.grossPrice.currency;
 
-                                            <span>/Gece</span>
+                                            @($"{Math.Round(price):N0} {currency}")
+                                            <span>-Gece</span>
                                         }
                                         else
                                         {
@@ -206,23 +208,27 @@
                                                 <td class="r-o">İnceleme:</td>
                                                 <td>@hotel.property.reviewCount reviews</td>
                                             </tr>
+                                            @{
+                                                DateTime? checkin = DateTime.TryParse(hotel.property.checkinDate, out var tempCheckin) ? tempCheckin : (DateTime?)null;
+                                                DateTime? checkout = DateTime.TryParse(hotel.property.checkoutDate, out var tempCheckout) ? tempCheckout : (DateTime?)null;
+                                            }
                                             <tr>
                                                 <td class="r-o">Check-in:</td>
-                                                <td>@hotel.property.checkinDate (@hotel.property.checkin?.fromTime - @hotel.property.checkin?.untilTime)</td>
+                                                <td>@(checkin?.ToString("dd.MM.yyyy") ?? "-")</td>
                                             </tr>
                                             <tr>
                                                 <td class="r-o">Check-out:</td>
-                                                <td>@hotel.property.checkoutDate (@hotel.property.checkout?.fromTime - @hotel.property.checkout?.untilTime)</td>
+                                                <td>@(checkout?.ToString("dd.MM.yyyy") ?? "-")</td>
                                             </tr>
                                         </tbody>
                                     </table>
                                     @if (hotel.property.photoUrls != null && hotel.property.photoUrls.Any())
                                     {
-                                        <a href="@hotel.property.photoUrls.FirstOrDefault()" class="primary-btn">Detaylar</a>
+                                        <a href="/Room/RoomDetail/@hotel.hotel_id" class="primary-btn">Detaylar</a>
                                     }
                                     else
                                     {
-                                        <a href="#" class="primary-btn">Detaylar</a>
+                                        <a href="/Room/RoomDetail/@hotel.hotel_id" class="primary-btn">Detaylar</a>
                                     }
 
                                 </div>
@@ -239,6 +245,8 @@
             </div>
         </div>
     </section>
+
+
     <footer class="footer-section">
         <div class="container">
             <div class="footer-text">
